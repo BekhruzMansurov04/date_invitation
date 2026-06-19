@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date? 💖</title>
+    <link rel="stylesheet" href="/page2.css">
+</head>
+<body>
+
+<div class="hearts"></div>
+
+<div class="card">
+    <img
+        src="https://cdn-icons-png.flaticon.com/512/616/616408.png"
+        alt="Cute Cat"
+        class="cat"
+    >
+
+    <h2>Will you go on a date with me? 💕</h2>
+    <p>You only have one correct answer 😏</p>
+
+    <div class="buttons">
+        <button class="yes-btn"
+                onclick="window.location.href='page3.html'">
+            Yes 💖
+        </button>
+
+        <button id="noBtn" class="no-btn">
+            No 😢
+        </button>
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseenter", () => {
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
+});
+</script>
+
+</body>
+</html>

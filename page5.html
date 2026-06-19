@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a Date 💖</title>
+    <link rel="stylesheet" href="/page5.css">
+</head>
+<body>
+
+<div class="floating-icons"></div>
+
+<div class="card">
+
+    <div class="icon">📅</div>
+
+    <h2>When are you free?</h2>
+    <p>Pick the perfect date and time for our special day 💕</p>
+
+    <div class="input-group">
+        <label>Date</label>
+        <input type="date" id="date">
+    </div>
+
+    <div class="input-group">
+        <label>Time</label>
+        <input type="time" id="time">
+    </div>
+
+    <button onclick="saveDate()">
+        Choose ✨
+    </button>
+
+</div>
+
+<script>
+function saveDate(){
+
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    if(!date || !time){
+        alert("Please select both date and time 💖");
+        return;
+    }
+
+    localStorage.setItem("date", date);
+    localStorage.setItem("time", time);
+
+    document.body.classList.add("fade-out");
+
+    setTimeout(() => {
+        window.location.href = "page6.html";
+    }, 500);
+}
+</script>
+
+</body>
+</html>

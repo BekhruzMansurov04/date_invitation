@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:linear-gradient(
+        -45deg,
+        #ff758c,
+        #ff7eb3,
+        #ffb6c1,
+        #ffc3a0
+    );
+
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Floating Hearts */
+.hearts::before,
+.hearts::after{
+    content:"💖";
+    position:absolute;
+    font-size:4rem;
+    opacity:.15;
+    animation:floatUp 8s linear infinite;
+}
+
+.hearts::before{
+    left:15%;
+    bottom:-100px;
+}
+
+.hearts::after{
+    right:15%;
+    bottom:-100px;
+    animation-delay:4s;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0) rotate(0deg);
+    }
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+}
+
+/* Card */
+.card{
+    width:500px;
+    max-width:90%;
+
+    padding:40px;
+    text-align:center;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+    animation:appear 1s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.success-icon{
+    font-size:5rem;
+    margin-bottom:15px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+h1{
+    color:white;
+    margin-bottom:25px;
+    font-size:2.4rem;
+}
+
+/* Result Box */
+.result-box{
+    background:rgba(255,255,255,.2);
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:25px;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin:15px 0;
+    padding:12px 15px;
+
+    background:rgba(255,255,255,.15);
+    border-radius:12px;
+
+    color:white;
+}
+
+.item strong{
+    color:#fff;
+}
+
+.message{
+    color:white;
+    font-size:1.1rem;
+    margin-bottom:25px;
+}
+
+/* Button */
+button{
+    border:none;
+    cursor:pointer;
+
+    padding:14px 30px;
+    border-radius:50px;
+
+    font-size:1rem;
+    font-weight:600;
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #ff4b91,
+        #ff6b81
+    );
+
+    box-shadow:0 10px 25px rgba(255,75,145,.4);
+
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-4px) scale(1.05);
+    box-shadow:0 15px 35px rgba(255,75,145,.6);
+}

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:linear-gradient(
+        -45deg,
+        #ff9a9e,
+        #fad0c4,
+        #fbc2eb,
+        #a18cd1
+    );
+
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+
+    transition:opacity .5s ease;
+}
+
+.fade-out{
+    opacity:0;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Floating food emojis */
+.floating-foods::before,
+.floating-foods::after{
+    content:"🍕";
+    position:absolute;
+    font-size:4rem;
+    opacity:.15;
+    animation:floatUp 10s linear infinite;
+}
+
+.floating-foods::before{
+    left:10%;
+    bottom:-100px;
+}
+
+.floating-foods::after{
+    content:"🍣";
+    right:10%;
+    bottom:-100px;
+    animation-delay:5s;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0) rotate(0deg);
+    }
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+}
+
+/* Card */
+.card{
+    width:650px;
+    max-width:90%;
+    padding:40px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+    animation:appear 1s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h2{
+    color:white;
+    margin-bottom:10px;
+    font-size:2rem;
+}
+
+p{
+    color:rgba(255,255,255,.9);
+    margin-bottom:30px;
+}
+
+/* Food Grid */
+.foods{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.foods button{
+    border:none;
+    cursor:pointer;
+
+    padding:18px;
+    border-radius:20px;
+
+    font-size:1rem;
+    font-weight:600;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    background:rgba(255,255,255,.9);
+
+    transition:.3s;
+}
+
+.foods button span{
+    font-size:1.5rem;
+}
+
+.foods button:hover{
+    transform:translateY(-6px) scale(1.05);
+    background:white;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.foods button:active{
+    transform:scale(.95);
+}

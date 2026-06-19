@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Food 🍽️</title>
+    <link rel="stylesheet" href="/page4.css">
+</head>
+<body>
+
+<div class="floating-foods"></div>
+
+<div class="card">
+
+    <h2>🍽️ What would you like to eat?</h2>
+    <p>Choose your favorite meal for our date 💕</p>
+
+    <div class="foods">
+
+        <button onclick="saveFood('Pizza')">
+            <span>🍕</span>
+            Pizza
+        </button>
+
+        <button onclick="saveFood('Sushi')">
+            <span>🍣</span>
+            Sushi
+        </button>
+
+        <button onclick="saveFood('Burger')">
+            <span>🍔</span>
+            Burger
+        </button>
+
+        <button onclick="saveFood('Pasta')">
+            <span>🍝</span>
+            Pasta
+        </button>
+
+        <button onclick="saveFood('Lagman')">
+            <span>🍜</span>
+            Lagman
+        </button>
+
+        <button onclick="saveFood('Ramen')">
+            <span>🍲</span>
+            Ramen
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+function saveFood(food){
+    localStorage.setItem("food", food);
+
+    document.body.classList.add("fade-out");
+
+    setTimeout(() => {
+        window.location.href = "page5.html";
+    }, 500);
+}
+</script>
+
+</body>
+</html>
